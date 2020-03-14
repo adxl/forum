@@ -1,4 +1,4 @@
-package com.adxl.forum.model;
+package com.adxl.forum.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,8 +12,7 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 
-	public Long getId(){
+	public Long getId() {
 		return id;
 	}
-
 }
