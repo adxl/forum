@@ -9,6 +9,9 @@ public class Post {
 	private int downvotes;
 	private Date date;
 
+	public Post() {
+	}
+
 	public Post(String text) {
 		this.text=text;
 		upvotes = 0;
