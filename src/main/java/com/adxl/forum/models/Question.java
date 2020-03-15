@@ -10,7 +10,7 @@ public class Question extends Post {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private int id;
 	private String title;
 
 	public Question(){

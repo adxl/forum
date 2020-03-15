@@ -16,11 +16,10 @@ public class Thread {
 	private List<Answer> answers=new ArrayList<>();
 
 	public Thread(){
-
 	}
 
-	public Thread(String questionTitle,String questionText) {
-		question=new Question(questionTitle,questionText);
+	public Thread(Question question) {
+		this.question=question;
 	}
 
 	public Question getQuestion() {
@@ -35,8 +34,8 @@ public class Thread {
 		return answers;
 	}
 
-	public void addAnswer(String answerText) {
-		answers.add(new Answer(answerText));
+	public void addAnswer(Answer answer) {
+		answers.add(answer);
 	}
 
 	public void deleteAnswer(Answer answer) {
