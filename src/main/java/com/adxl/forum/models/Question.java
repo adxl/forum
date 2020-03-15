@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Question extends Post {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String id;
 	private String title;
 
