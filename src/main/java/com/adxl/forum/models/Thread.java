@@ -4,14 +4,14 @@ import java.util.List;
 
 public class Thread {
 
-	private Post question;
-	private List<Post> answers;
+	private Question question;
+	private List<Answer> answers;
 
-	public Thread(String questionText) {
-		question=new Post(questionText);
+	public Thread(String questionTitle,String questionText) {
+		question=new Question(questionTitle,questionText);
 	}
 
-	public Post getQuestion() {
+	public Question getQuestion() {
 		return question;
 	}
 
@@ -19,15 +19,15 @@ public class Thread {
 		return question.getScore();
 	}
 
-	public List<Post> getAnswers() {
+	public List<Answer> getAnswers() {
 		return answers;
 	}
 
 	public void addAnswer(String answerText) {
-		answers.add(new Post(answerText));
+		answers.add(new Answer(answerText));
 	}
 
-	public void deleteAnswer(Post answer) {
+	public void deleteAnswer(Answer answer) {
 		answers.remove(answer);
 	}
 }
