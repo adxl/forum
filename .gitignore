@@ -1,6 +1,7 @@
 target/
 .mvn
 !**/src/main/**
+out/
 
 ### STS ###
 .apt_generated
