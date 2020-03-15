@@ -2,14 +2,14 @@ package com.adxl.forum.models;
 
 import java.util.Date;
 
-public class Question {
+public class Post {
 
 	private String text;
 	private int upvotes;
 	private int downvotes;
 	private Date date;
 
-	public Question(String text) {
+	public Post(String text) {
 		this.text=text;
 		upvotes = 0;
 		downvotes = 0;
