@@ -23,4 +23,9 @@ public class Question extends Post {
 	public String getTitle() {
 		return title;
 	}
+
+	@Override
+	public String toString() {
+		return "("+id+")\t"+title+": "+super.getText();
+	}
 }

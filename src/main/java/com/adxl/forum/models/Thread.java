@@ -12,10 +12,12 @@ public class Thread {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@OneToOne
+
+	@OneToOne(cascade=CascadeType.ALL)
 	private Question question;
-	@OneToMany
+
 	@JoinColumn(name="id")
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<Answer> answers;
 
 	public Thread() {
