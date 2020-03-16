@@ -1,5 +1,6 @@
 package com.adxl.forum.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
@@ -7,6 +8,7 @@ import java.util.Date;
 @MappedSuperclass
 public class Post {
 
+	@Column( length = 100000 )
 	private String text;
 	private int upvotes;
 	private int downvotes;
