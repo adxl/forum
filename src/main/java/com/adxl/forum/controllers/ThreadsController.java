@@ -29,6 +29,6 @@ public class ThreadsController {
 		Thread thread = new Thread(question);
 		threadRepository.save(thread);
 	}
-	
+
 
 }

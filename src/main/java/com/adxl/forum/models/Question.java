@@ -3,7 +3,7 @@ package com.adxl.forum.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "question")
+@Table(name="question")
 public class Question extends Post {
 
 	@Id
@@ -11,7 +11,7 @@ public class Question extends Post {
 	private int id;
 	private String title;
 
-	public Question(){
+	public Question() {
 		super();
 	}
 

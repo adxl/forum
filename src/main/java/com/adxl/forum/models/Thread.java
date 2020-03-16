@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "thread")
+@Table(name="thread")
 public class Thread {
 
 	@Id
@@ -15,10 +15,10 @@ public class Thread {
 	@OneToOne
 	private Question question;
 	@OneToMany
-	@JoinColumn(name = "id")
+	@JoinColumn(name="id")
 	private List<Answer> answers;
 
-	public Thread(){
+	public Thread() {
 	}
 
 	public Thread(Question question) {

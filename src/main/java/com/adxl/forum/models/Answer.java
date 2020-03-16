@@ -3,7 +3,7 @@ package com.adxl.forum.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "answer")
+@Table(name="answer")
 public class Answer extends Post {
 
 	@Id
