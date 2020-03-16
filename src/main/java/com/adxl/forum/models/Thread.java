@@ -1,10 +1,12 @@
 package com.adxl.forum.models;
 
+import javax.naming.Name;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "thread")
 public class Thread {
 
 	@Id
@@ -13,6 +15,7 @@ public class Thread {
 	@OneToOne
 	private Question question;
 	@OneToMany
+	@JoinColumn(name = "id")
 	private List<Answer> answers;
 
 	public Thread(){
