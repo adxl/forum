@@ -9,17 +9,18 @@ public class Thread {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String id;
+	private int id;
 	@OneToOne
 	private Question question;
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Answer> answers=new ArrayList<>();
+	@OneToMany
+	private List<Answer> answers;
 
 	public Thread(){
 	}
 
 	public Thread(Question question) {
 		this.question=question;
+		answers=new ArrayList<>();
 	}
 
 	public Question getQuestion() {

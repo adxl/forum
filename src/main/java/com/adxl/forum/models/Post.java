@@ -1,7 +1,10 @@
 package com.adxl.forum.models;
 
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
+@MappedSuperclass
 public class Post {
 
     private String text;
