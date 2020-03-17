@@ -1,6 +1,5 @@
 package com.adxl.forum.models;
 
-import javax.naming.Name;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +29,6 @@ public class Thread {
 
 	public Question getQuestion() {
 		return question;
-	}
-
-	public int getScore() {
-		return question.getScore();
 	}
 
 	public List<Answer> getAnswers() {
