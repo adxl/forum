@@ -70,7 +70,8 @@ public class ThreadsController {
 	@ResponseBody
 	@DeleteMapping("/q/{q_id}/delete")
 	public void deleteQuestion(@PathVariable int q_id) {
-		threadRepository.deleteById(q_id);
+		if(threadRepository.findById(q_id).isPresent())
+			threadRepository.deleteById(q_id);
 	}
 
 	@ResponseBody
