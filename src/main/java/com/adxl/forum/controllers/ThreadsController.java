@@ -9,6 +9,8 @@ import com.adxl.forum.repositories.ThreadRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Controller
 public class ThreadsController {
 
@@ -30,14 +32,19 @@ public class ThreadsController {
 
 	@ResponseBody
 	@GetMapping("/q/{q_id}")
-	public Thread getThread(@PathVariable int q_id) {
-		return threadRepository.findById(q_id).get();
+	public Optional<Thread> getThread(@PathVariable int q_id) {
+		return threadRepository.findById(q_id);
 	}
 
 	@ResponseBody
 	@GetMapping("/q/{q_id}/a/")
 	public Iterable<Answer> getAllAnswers(@PathVariable int q_id) {
-		return threadRepository.findById(q_id).get().getAnswers();
+		var optionalThread=threadRepository.findById(q_id);
+
+		//noinspection OptionalIsPresent
+		if(optionalThread.isPresent())
+			return optionalThread.get().getAnswers();
+		return null;
 	}
 
 	@ResponseBody
@@ -51,10 +58,13 @@ public class ThreadsController {
 	@ResponseBody
 	@PostMapping("/q/{q_id}/a/new")
 	public void reply(@PathVariable int q_id,@RequestBody Answer answer) {
-		Thread thread=threadRepository.findById(q_id).get();
-		thread.addAnswer(answer);
-		answerRepository.save(answer);
-		threadRepository.save(thread);
+		var optionalThread=threadRepository.findById(q_id);
+		if(optionalThread.isPresent())
+		{
+			optionalThread.get().addAnswer(answer);
+			answerRepository.save(answer);
+			threadRepository.save(optionalThread.get());
+		}
 	}
 
 	@ResponseBody
@@ -65,11 +75,15 @@ public class ThreadsController {
 
 	@ResponseBody
 	@DeleteMapping("/q/{q_id}/a/{a_id}/delete")
-	public void deleteAnswer(@PathVariable int q_id, @PathVariable int a_id) {
-		Thread thread = threadRepository.findById(q_id).get();
-		Answer answer = answerRepository.findById(a_id).get();
-		thread.deleteAnswer(answer);
-		answerRepository.delete(answer);
-		threadRepository.save(thread);
+	public void deleteAnswer(@PathVariable int q_id,@PathVariable int a_id) {
+		var optionalThread=threadRepository.findById(q_id);
+		var optionalAnswer=answerRepository.findById(a_id);
+
+		if(optionalThread.isPresent() && optionalAnswer.isPresent())
+		{
+			optionalThread.get().deleteAnswer(optionalAnswer.get());
+			answerRepository.delete(optionalAnswer.get());
+			threadRepository.save(optionalThread.get());
+		}
 	}
 }
