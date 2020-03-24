@@ -2,43 +2,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>Home</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="app.js"></script>
   </head>
 
-  <body>
+  <body ng-app="forum" ng-controller="afController as af">
     <div id="threads-list">
-      <div class="thread">
+      <div class="thread" ng-repeat="x in thread_list">
         <div class="question-title-container">
-          <p class="question-title">What is Lorem Ipsum?</p>
+          <p class="question-title">{{x.question.title | uppercase}}</p>
         </div>
         <div class="question-preview-container">
-          <p class="question-preview">
-            What is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-          </p>
+          <p class="question-preview">{{x.question.text | limitToWords:15}}...</p>
         </div>
-        <div class="thread">
-          <div class="question-title-container">
-            <p class="question-title">What is Lorem Ipsum?</p>
-          </div>
-          <div class="question-preview-container">
-            <p class="question-preview">
-              What is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div>
-          <div class="thread">
-            <div class="question-title-container">
-              <p class="question-title">What is Lorem Ipsum?</p>
-            </div>
-            <div class="question-preview-container">
-              <p class="question-preview">
-                What is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-              </p>
-            </div>
       </div>
     </div>
   </body>
