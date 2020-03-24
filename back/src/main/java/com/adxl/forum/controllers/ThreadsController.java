@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@Controller
+@RestController
+@CrossOrigin
 public class ThreadsController {
 
 	private final ThreadRepository threadRepository;
@@ -24,19 +25,18 @@ public class ThreadsController {
 		this.answerRepository=answerRepository;
 	}
 
-	@ResponseBody
 	@GetMapping(path="/q/")
 	public Iterable<Thread> getAllThreads() {
 		return threadRepository.findAll();
 	}
 
-	@ResponseBody
+
 	@GetMapping("/q/{q_id}")
 	public Optional<Thread> getThread(@PathVariable int q_id) {
 		return threadRepository.findById(q_id);
 	}
 
-	@ResponseBody
+
 	@GetMapping("/q/{q_id}/a/")
 	public Iterable<Answer> getAllAnswers(@PathVariable int q_id) {
 		var optionalThread=threadRepository.findById(q_id);
@@ -47,7 +47,7 @@ public class ThreadsController {
 		return null;
 	}
 
-	@ResponseBody
+
 	@PostMapping("/q/new")
 	public void ask(@RequestBody Question question) {
 		Thread thread=new Thread(question);
@@ -55,7 +55,7 @@ public class ThreadsController {
 		threadRepository.save(thread);
 	}
 
-	@ResponseBody
+
 	@PostMapping("/q/{q_id}/a/new")
 	public void reply(@PathVariable int q_id,@RequestBody Answer answer) {
 		var optionalThread=threadRepository.findById(q_id);
@@ -67,14 +67,14 @@ public class ThreadsController {
 		}
 	}
 
-	@ResponseBody
+
 	@DeleteMapping("/q/{q_id}/delete")
 	public void deleteQuestion(@PathVariable int q_id) {
 		if(threadRepository.findById(q_id).isPresent())
 			threadRepository.deleteById(q_id);
 	}
 
-	@ResponseBody
+
 	@DeleteMapping("/q/{q_id}/a/{a_id}/delete")
 	public void deleteAnswer(@PathVariable int q_id,@PathVariable int a_id) {
 		var optionalThread=threadRepository.findById(q_id);
@@ -88,3 +88,4 @@ public class ThreadsController {
 		}
 	}
 }
+
