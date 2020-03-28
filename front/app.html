@@ -1,19 +1,23 @@
-<html lang="en">
-  <head>
-    <base href="/" />
-    <meta charset="UTF-8" />
-    <title>Home</title>
+<html lang="en" ng-app="forum">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
-    <script src="app.js"></script>
-    <script src="q/home.js"></script>
-    <script src="q/thread.js"></script>
-  </head>
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <title>Home</title>
 
-  <body ng-app="forum" ng-controller="mainController">
-    <h1>FORUM</h1>
-    <p>link: {{link}}</p>
-    <div ng-view></div>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="q/home.js"></script>
+  <script src="q/thread.js"></script>
+</head>
+
+<body ng-controller="mainController">
+  <div id="main-title-container">
+    <h1 id="main-title"><a ng-href="/app.html">FORUM</a></h1>
+  </div>
+  <div ng-view></div>
+  <hr />
+</body>
+
 </html>
