@@ -27,6 +27,10 @@ public class Thread {
 		answers=new ArrayList<>();
 	}
 
+	public int getId() {
+		return id;
+	}
+
 	public Question getQuestion() {
 		return question;
 	}
