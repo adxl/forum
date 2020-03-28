@@ -1,0 +1,10 @@
+<div id="threads-list">
+  <div class="thread" ng-repeat="x in thread_list">
+    <div class="question-title-container">
+      <a href="/q/{{x.id}}" class="question-title">{{x.question.title | uppercase}}</a>
+    </div>
+    <div class="question-preview-container">
+      <p class="question-preview">{{x.question.text | limitToWords:15}}...</p>
+    </div>
+  </div>
+</div>
