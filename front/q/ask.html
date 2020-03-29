@@ -1,0 +1,14 @@
+<div>
+	<p>Ask a question:</p>
+</div>
+<form>
+	<div id="ask-title">
+		<input required type="text" placeholder="Title" ng-model="title" />
+	</div>
+	<div id="ask-text">
+		<textarea rows="10" cols="50" placeholder="Text (optional)" ng-model="text"> </textarea>
+	</div>
+	<div id="ask-submit">
+		<button type="submit" ng-click="postQuestion(title,text)">Sumbit</button>
+	</div>
+</form>

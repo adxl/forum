@@ -10,7 +10,7 @@ angular.module('thread', [])
 			var id = $routeParams.id;
 			console.log(id);
 
-			$http
+			$http 
 				.get('http://localhost:8080/q/' + 2)
 				.then(
 					function success(response) {

@@ -12,13 +12,19 @@
 		<script src="app.js"></script>
 		<script src="q/home.js"></script>
 		<script src="q/thread.js"></script>
+		<script src="q/ask.js"></script>
 	</head>
 
 	<body ng-controller="mainController">
 		<nav>
-			<h1>
+			<p id="app-logo">
 				<a ng-href="/app.html">FORUM</a>
-			</h1>
+			</p>
+			<div id="ask-button-container">
+				<div id="ask-button">
+					<a href="/ask">Ask a question</a>
+				</div>
+			</div>
 		</nav>
 
 		<div id="main-container">

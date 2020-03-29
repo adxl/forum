@@ -9,10 +9,30 @@ nav {
 	background-color: darkcyan;
 	overflow: hidden;
 }
-nav h1 {
-	padding-left: 3%;
+#app-logo {
+	width: 50%;
+	float: left;
+	margin: 10px 0;
 }
-nav h1 a {
+#app-logo a {
+	text-decoration: none;
+	color: white;
+	padding-left: 3%;
+	font-size: xx-large;
+}
+
+#ask-button-container {
+	float: left;
+	width: 50%;
+	margin-top: 15px;
+}
+
+#ask-button {
+	margin-right: 25px;
+	text-align: right;
+}
+
+#ask-button a {
 	text-decoration: none;
 	color: white;
 }
@@ -53,7 +73,7 @@ nav h1 a {
 }
 
 #right-section-content {
-	padding: 20px 20% 10% 10px;
+	padding: 20px 10% 10% 10px;
 }
 
 .thread {
@@ -122,4 +142,31 @@ nav h1 a {
 	font-size: x-large;
 	font-weight: normal;
 	margin-bottom: 50px;
+}
+
+#ask-title {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+#ask-title input {
+	padding: 8px;
+	width: 100%;
+	border: 1px transparent;
+	border-radius: 5px;
+}
+
+#ask-text textarea {
+	width: 100%;
+	padding: 8px;
+	border: 1px transparent;
+	border-radius: 5px;
+}
+
+#ask-submit {
+	margin-top: 10px;
+}
+
+#ask-submit button {
+	padding: 5px;
 }
