@@ -6,21 +6,54 @@ angular.module('thread', [])
 	})
 
 	.controller('threadController',
-		function ($scope, $http, $routeParams) {
+		function ($scope, $http, $route, $routeParams) {
 			var id = $routeParams.id;
 			console.log(id);
 
-			$http 
-				.get('http://localhost:8080/q/' + 2)
+			$http
+				.get('http://localhost:8080/q/' + id)
 				.then(
 					function success(response) {
-						$scope.tab_title = "Question"
+						console.log(response.data);
+
 						$scope.title = response.data.question.title;
 						$scope.text = response.data.question.text;
+
+						var count = response.data.answers.length;
+						switch (count) {
+							case 0: $scope.count = 'No answers'; break;
+							case 1: $scope.count = '1 answer'; break;
+							default: $scope.count = count + ' answers';
+						}
+
+						$scope.answers_list = response.data.answers;
+
 					},
 					function error(response) {
 						console.log('error', response);
 					}
 				);
+
+			$scope.postAnswer = function (text) {
+
+				if (text) {
+
+					var answer = {
+						text: text
+					}
+					$http.post('http://localhost:8080/q/' + id + '/a/new', answer)
+						.then(function success() {
+							console.log("ok");
+							$scope.answer = '';
+							$route.reload();
+
+						}, function error() {
+							console.log("error");
+
+						})
+
+				}
+
+			}
 		}
 	);

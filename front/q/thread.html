@@ -4,9 +4,19 @@
 <div id="th-text-container">
 	<p id="th-text">{{text}}</p>
 </div>
+<hr />
+<div id="reply-container">
+	<form>
+		<input type="text" placeholder="Your answer" ng-model="answer" />
+		<input type="button" ng-click="postAnswer(answer)" value="Submit" />
+	</form>
+</div>
 
-<br />
-
-<div>
-	<a href="../">go back</a>
+<div id="answers-containers">
+	<div id="answers-count">
+		<p>{{count}}</p>
+	</div>
+	<div class="answer" ng-repeat="x in answers_list">
+		<p class="answer-content">{{x.text}}</p>
+	</div>
 </div>

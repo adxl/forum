@@ -4,6 +4,8 @@ body {
 	height: 100%;
 	color: #0c0d0e;
 	overflow: hidden;
+
+	font-family: 'Roboto', sans-serif;
 }
 nav {
 	background-color: darkcyan;
@@ -169,4 +171,21 @@ nav {
 
 #ask-submit button {
 	padding: 5px;
+}
+
+#th-title-container {
+	margin-left: 20px;
+}
+
+#th-title {
+	font-size: x-large;
+	font-weight: 600;
+}
+
+#th-text-container {
+	margin-left: 20px;
+}
+
+#th-text {
+	font-size: medium;
 }
