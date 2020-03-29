@@ -11,7 +11,7 @@ angular.module('thread', [])
 			console.log(id);
 
 			$http
-				.get('http://localhost:8080/q/' + id)
+				.get('http://localhost:8080/q/' + 2)
 				.then(
 					function success(response) {
 						$scope.tab_title = "Question"

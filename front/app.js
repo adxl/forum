@@ -8,7 +8,9 @@ app.controller('mainController', function mainController($scope, $route) {
 app.config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/q', {
-      template: '<home></home>',
+      // template: '<home></home>',
+      template: '<thread></thread>'
+
     })
     .when('/q/:id', {
       template: '<thread></thread>'

@@ -117,3 +117,9 @@ nav h1 a {
 	color: gray;
 	font-size: small;
 }
+
+#home-title {
+	font-size: x-large;
+	font-weight: normal;
+	margin-bottom: 50px;
+}

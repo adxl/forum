@@ -1,6 +1,6 @@
-<h2>Questions :</h2>
+<p id="home-title">Latest questions :</p>
 <div id="threads-list">
-	<div class="thread" ng-repeat="x in thread_list">
+	<div class="thread" ng-repeat="x in thread_list | orderBy:'-' ">
 		<div class="thread-info-container">
 			<div class="thread-info">
 				<div class="answers-count">{{x.answers.length}}</div>
