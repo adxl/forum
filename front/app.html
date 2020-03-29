@@ -1,23 +1,41 @@
+<!DOCTYPE html>
 <html lang="en" ng-app="forum">
+	<head>
+		<base href="/" />
+		<meta charset="UTF-8" />
+		<title>{{tab_title}}</title>
 
-<head>
-  <base href="/" />
-  <meta charset="UTF-8" />
-  <title>Home</title>
+		<link rel="stylesheet" href="style.css" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="q/home.js"></script>
-  <script src="q/thread.js"></script>
-</head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+		<script src="app.js"></script>
+		<script src="q/home.js"></script>
+		<script src="q/thread.js"></script>
+	</head>
 
-<body ng-controller="mainController">
-  <div id="main-title-container">
-    <h1 id="main-title"><a ng-href="/app.html">FORUM</a></h1>
-  </div>
-  <div ng-view></div>
-  <hr />
-</body>
+	<body ng-controller="mainController">
+		<nav>
+			<h1>
+				<a ng-href="/app.html">FORUM</a>
+			</h1>
+		</nav>
 
+		<div id="main-container">
+			<div id="left-section-container">
+				<div id="left-section">
+					<div class="left-section-element">
+						<a ng-href="/app.html">Home</a>
+					</div>
+					<div class="left-section-element">
+						<a ng-href="">Random question</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="right-section">
+				<div id="right-section-content" ng-view></div>
+			</div>
+		</div>
+	</body>
 </html>

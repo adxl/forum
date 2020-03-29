@@ -1,15 +1,14 @@
 var app = angular.module('forum', ['ngRoute', 'home', 'thread']);
 
-app.controller('mainController', function mainController($scope) {
-  $scope.link = 'OK';
+app.controller('mainController', function mainController($scope, $route) {
 });
 
 //CONFIG
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/q', {
-      template: '<home></home>'
+      template: '<home></home>',
     })
     .when('/q/:id', {
       template: '<thread></thread>'

@@ -1,0 +1,119 @@
+html,
+body {
+	margin: 0;
+	height: 100%;
+	color: #0c0d0e;
+	overflow: hidden;
+}
+nav {
+	background-color: darkcyan;
+	overflow: hidden;
+}
+nav h1 {
+	padding-left: 3%;
+}
+nav h1 a {
+	text-decoration: none;
+	color: white;
+}
+
+#main-container {
+	width: 100%;
+	height: 100%;
+}
+
+#left-section-container {
+	width: 15%;
+	height: 100%;
+	float: left;
+	/* background-color: rgb(227, 227, 227); */
+}
+#left-section {
+	padding-top: 20px;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+}
+
+.left-section-element {
+	width: 100%;
+	padding: 5px 5% 5px 20%;
+}
+.left-section-element a {
+	color: gray;
+	text-decoration: none;
+}
+
+#right-section {
+	width: 85%;
+	overflow: scroll;
+	height: 100%;
+	float: left;
+	background-color: rgb(222, 226, 228);
+}
+
+#right-section-content {
+	padding: 20px 20% 10% 10px;
+}
+
+.thread {
+	width: 100%;
+	padding: 2% 0;
+	margin: 20px 0;
+	border: solid 1px rgb(188, 188, 188);
+	border-radius: 8px;
+	overflow: hidden;
+	display: flex;
+	background-color: white;
+}
+
+.thread-info-container {
+	width: 10%;
+	float: left;
+	display: flex;
+}
+
+.thread-info {
+	margin: 0 10px 0 10px;
+	border: solid 1px rgb(188, 188, 188);
+	border-radius: 5px;
+	text-align: center;
+	width: 100%;
+	position: relative;
+}
+
+.answers-count {
+	font-size: x-large;
+	padding-top: 20%;
+	color: gray;
+}
+
+.answers {
+	font-size: xx-small;
+	color: gray;
+	position: absolute;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+}
+
+.thread-content-container {
+	width: 90%;
+	float: left;
+	color: #0c0d0e;
+}
+
+.thread-content {
+	margin-right: 10px;
+}
+
+.thread-content a {
+	text-decoration: none;
+	color: darkcyan;
+}
+
+.question-date {
+	float: right;
+	color: gray;
+	font-size: small;
+}

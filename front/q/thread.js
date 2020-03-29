@@ -14,7 +14,7 @@ angular.module('thread', [])
 				.get('http://localhost:8080/q/' + id)
 				.then(
 					function success(response) {
-						$scope.id = response.data.id;
+						$scope.tab_title = "Question"
 						$scope.title = response.data.question.title;
 						$scope.text = response.data.question.text;
 					},
