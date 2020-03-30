@@ -1,22 +1,27 @@
-<div id="th-title-container">
-	<p id="th-title">{{title}}</p>
-</div>
-<div id="th-text-container">
-	<p id="th-text">{{text}}</p>
-</div>
-<hr />
-<div id="reply-container">
-	<form>
-		<input type="text" placeholder="Your answer" ng-model="answer" />
-		<input type="button" ng-click="postAnswer(answer)" value="Submit" />
-	</form>
+<div id="th-container">
+	<div id="th-title-container">
+		<p id="th-title">{{title}}</p>
+	</div>
+	<div id="th-text-container">
+		<p id="th-text">{{text}}</p>
+	</div>
 </div>
 
-<div id="answers-containers">
+<div id="reply-container">
+	<div id="reply-text">
+		<textarea rows="2" id="reply-text" type="text" placeholder="Your answer" ng-model="answer"></textarea>
+	</div>
+	<div id="reply-submit">
+		<input type="button" ng-click="postAnswer(answer)" value="Submit" />
+	</div>
+</div>
+
+<div id="answers-container">
 	<div id="answers-count">
 		<p>{{count}}</p>
 	</div>
 	<div class="answer" ng-repeat="x in answers_list">
-		<p class="answer-content">{{x.text}}</p>
+		<p class="answer-text">{{x.text}}</p>
+		<p class="answer-date">answered on {{x.date | formatDate}}</p>
 	</div>
 </div>

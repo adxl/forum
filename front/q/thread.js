@@ -56,4 +56,15 @@ angular.module('thread', [])
 
 			}
 		}
-	);
+	)
+
+	.filter('formatDate', function () {
+		return function (full_date) {
+			var day = full_date.substring(8, 10);
+			var month = full_date.substring(5, 7);
+			var year = full_date.substring(0, 4);
+			var date = month + "/" + day + "/" + year;
+			return date;
+		}
+	})
+	;

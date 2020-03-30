@@ -173,8 +173,20 @@ nav {
 	padding: 5px;
 }
 
+#th-container {
+	margin-bottom: 5px;
+	background-color: white;
+	border-radius: 10px;
+	padding: 5px 20px 15px 10px;
+}
+
 #th-title-container {
-	margin-left: 20px;
+	margin-left: 5px;
+	border-bottom: solid 1px gray;
+}
+
+#th-title-container p {
+	margin: 10px;
 }
 
 #th-title {
@@ -188,4 +200,60 @@ nav {
 
 #th-text {
 	font-size: medium;
+}
+
+#reply-container {
+	width: 100%;
+	overflow: hidden;
+}
+
+#reply-text {
+	width: 90%;
+	float: left;
+	height: 100%;
+}
+
+#reply-text textarea {
+	max-width: 95%;
+	width: 95%;
+	border: none;
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+#reply-submit {
+	width: 10%;
+	float: left;
+	height: 100%;
+}
+
+#reply-submit input {
+	padding: 5px 15px;
+	border: none;
+}
+
+#answers-container {
+	margin-top: 20px;
+}
+
+#answers-count p {
+	font-size: x-large;
+	border-bottom: solid 1px gray;
+}
+
+.answer {
+	width: 100%;
+	background-color: white;
+	border-radius: 5px;
+	border-bottom: solid 1px gray;
+}
+
+.answer-text {
+	padding: 10px 0 0 20px;
+}
+.answer-date {
+	color: gray;
+	text-align: right;
+	padding: 0 20px;
+	font-size: x-small;
 }
