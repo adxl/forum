@@ -11,7 +11,6 @@ home.controller('homeController', ['$http', '$scope', 'orderByFilter', function 
 		.then(function success(response) {
 
 			$scope.filter = 'Questions'
-			$scope.newest = 'Newest'
 			$scope.thread_list = response.data;
 
 		}, function error(response) {
@@ -20,17 +19,12 @@ home.controller('homeController', ['$http', '$scope', 'orderByFilter', function 
 
 	$scope.sortBy = function (order) {
 
-
 		switch (order) {
-			case 'newest': $scope.thread_list = orderBy($scope.thread_list, '-');
-				if ($scope.newest == 'Newest') {
-					$scope.newest = 'Oldest'
-					$scope.filter = 'Latest questions'
-				}
-				else {
-					$scope.newest = 'Newest'
-					$scope.filter = 'Old questions'
-				}
+			case 'newest': $scope.thread_list = orderBy($scope.thread_list, 'question.date', true);
+				$scope.filter = 'Latest questions';
+				break;
+			case 'oldest': $scope.thread_list = orderBy($scope.thread_list, 'question.date', false);
+				$scope.filter = 'Old questions';
 				break;
 			case 'most': $scope.thread_list = orderBy($scope.thread_list, 'answers.length', true);
 				$scope.filter = 'Questions with most answers'
