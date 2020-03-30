@@ -1,6 +1,16 @@
-<p id="home-title">Latest questions :</p>
+<p id="home-title">{{filter}} :</p>
+<div id="sort">
+	<ul>
+		<li>Sort by :</li>
+		<li><a href="" ng-click="sortBy('newest')">{{newest}}</a></li>
+		<span> | </span>
+		<li><a href="" ng-click="sortBy('most')">Most aswers</a></li>
+		<span> | </span>
+		<li><a href="" ng-click="sortBy('least')">Least aswers</a></li>
+	</ul>
+</div>
 <div id="threads-list">
-	<div class="thread" ng-repeat="x in thread_list | orderBy:'-' ">
+	<div class="thread" ng-repeat="x in thread_list">
 		<div class="thread-info-container">
 			<div class="thread-info">
 				<div class="answers-count">{{x.answers.length}}</div>
@@ -15,7 +25,7 @@
 				<div class="question-preview-container">
 					<p class="question-preview">{{x.question.text | limitToWords:15}}...</p>
 				</div>
-				<div class="question-date">Asked on {{x.question.date | formatDate}}</div>
+				<div class="question-date">{{x.question.date | formatDate}}</div>
 			</div>
 		</div>
 	</div>

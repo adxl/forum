@@ -60,10 +60,15 @@ angular.module('thread', [])
 
 	.filter('formatDate', function () {
 		return function (full_date) {
-			var day = full_date.substring(8, 10);
-			var month = full_date.substring(5, 7);
-			var year = full_date.substring(0, 4);
-			var date = month + "/" + day + "/" + year;
+			var dd = full_date.substring(8, 10);
+			var mm = full_date.substring(5, 7);
+			var yyyy = full_date.substring(0, 4);
+			var date = mm + "/" + dd + "/" + yyyy;
+
+			console.log(full_date);
+
+
+
 			return date;
 		}
 	})

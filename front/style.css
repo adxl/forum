@@ -146,6 +146,19 @@ nav {
 	margin-bottom: 50px;
 }
 
+#sort ul {
+	display: block;
+}
+
+#sort li {
+	display: inline;
+}
+
+#sort li a {
+	text-decoration: none;
+	color: darkcyan;
+}
+
 #ask-title {
 	width: 100%;
 	margin-bottom: 15px;
