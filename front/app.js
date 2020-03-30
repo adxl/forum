@@ -1,6 +1,18 @@
 var app = angular.module('forum', ['ngRoute', 'home', 'thread', 'ask']);
 
-app.controller('mainController', function mainController($scope, $route) {
+app.controller('mainController', function mainController($scope, $route, $location, $http) {
+
+  $scope.randomQuestion = function () {
+
+    $http.get("http://localhost:8080/q/")
+      .then(function success(response) {
+
+        var items = response.data;
+        var id = items[Math.floor(Math.random() * items.length)].id;
+
+        $location.url("/q/" + id);
+      })
+  }
 });
 
 //CONFIG
