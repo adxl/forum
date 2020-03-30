@@ -6,6 +6,7 @@
 		<title>{{tab_title}}</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
 		<link rel="stylesheet" href="style.css" />
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
@@ -19,7 +20,7 @@
 	<body ng-controller="mainController">
 		<nav>
 			<p id="app-logo">
-				<a ng-href="/app.html">FORUM</a>
+				<a ng-href="/app.html">FORUM <i class="fas fa-user-secret"></i></a>
 			</p>
 			<div id="ask-button-container">
 				<div id="ask-button">
@@ -32,10 +33,10 @@
 			<div id="left-section-container">
 				<div id="left-section">
 					<div class="left-section-element">
-						<a ng-href="/app.html">Home</a>
+						<a ng-href="/app.html"><i class="fas fa-home"></i> Home</a>
 					</div>
 					<div class="left-section-element">
-						<a href="" ng-click="randomQuestion()">Random question</a>
+						<a href="" ng-click="randomQuestion()"><i class="fas fa-dice"></i> Random question</a>
 					</div>
 				</div>
 			</div>

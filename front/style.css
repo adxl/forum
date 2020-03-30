@@ -2,7 +2,7 @@ html,
 body {
 	margin: 0;
 	height: 100%;
-	color: #0c0d0e;
+	color: #131516;
 	overflow: hidden;
 
 	font-family: 'Roboto', sans-serif;
@@ -35,6 +35,12 @@ nav {
 }
 
 #ask-button a {
+	border: solid 1px white;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+#ask-button a {
 	text-decoration: none;
 	color: white;
 }
@@ -59,7 +65,7 @@ nav {
 
 .left-section-element {
 	width: 100%;
-	padding: 5px 5% 5px 20%;
+	padding: 5px 5% 5px 10%;
 }
 .left-section-element a {
 	color: gray;
@@ -143,7 +149,12 @@ nav {
 #home-title {
 	font-size: x-large;
 	font-weight: normal;
-	margin-bottom: 50px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+#sort {
+	border-bottom: solid 1px rgb(188, 188, 188);
 }
 
 #sort ul {
